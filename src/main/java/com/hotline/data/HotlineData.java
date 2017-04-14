@@ -7,6 +7,6 @@ public class HotlineData {
     public static Object[][] login(){
         return new Object[][]{
                 {"mr.auto.qa@gmail.com", "mrautoqa12345"}
-        }
+        };
     }
 }
