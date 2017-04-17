@@ -1,6 +1,8 @@
 package com.hotline.tests;
 
 import com.hotline.HotlineMainPage;
+import com.hotline.data.HotlineData;
+import com.hotline.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -8,10 +10,12 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.concurrent.TimeUnit;
+
 /**
- * Created by Dmytro_Kapeliukh on 4/13/17.
+ * Created by Dmytro_Kapeliukh on 4/17/17.
  */
-public class SignUpTest {
+public class LoginTest {
     public WebDriver driver;
     HotlineMainPage htMainPage;
 
@@ -19,21 +23,21 @@ public class SignUpTest {
     public void setup(){
         this.driver = new FirefoxDriver();
         htMainPage = PageFactory.initElements(driver, HotlineMainPage.class);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     @AfterClass(alwaysRun = true)
     public void teardown() throws InterruptedException {
         Thread.sleep(6000L);
-        this.driver.quit();
+        driver.quit();
     }
 
-    @Test
-    public void signUpTest(){
+    @Test(dataProviderClass = HotlineData.class, dataProvider = "login")
+    public void loginTest(String login, String password){
         htMainPage.loadPage();
-        htMainPage.clickRegistrationButton();
-        htMainPage.setTextFieldEmail("mr.auto.qa@gmail.com");
-        htMainPage.setTextFiledNick("AutoQA");
-        htMainPage.setTextFiledPassword("mrautoqa12345");
-        htMainPage.clickSubmitButton();
+        htMainPage.clickLoginButton();
+        htMainPage.setTextFiledLogin(login);
+        htMainPage.setTextLoginPassword(password);
+        htMainPage.clickPopupLoginButton();
     }
 }
