@@ -25,7 +25,7 @@ public class SelectProducts {
         this.driver = new FirefoxDriver();
         htMenuPage = PageFactory.initElements(driver, HotlineMenuPage.class);
         htMainPage = PageFactory.initElements(driver, HotlineMainPage.class);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
     }
 
     @AfterClass(alwaysRun = true)
@@ -38,9 +38,10 @@ public class SelectProducts {
     public void selectIphone(String email, String password) throws InterruptedException {
         htMainPage.loadPage();
         htMainPage.login(email, password);
-        Thread.sleep(3000L);
         htMenuPage.setTextSearchFiled("Iphone");
         htMenuPage.clickSearchButton();
         htMenuPage.clickSelectIphone();
+        htMenuPage.addElementToTheBookmarks();
+        htMenuPage.clickSaveBookmarkButton();
     }
 }

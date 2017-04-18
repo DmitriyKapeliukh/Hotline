@@ -17,7 +17,7 @@ public class BasePage {
 
     public BasePage(WebDriver driver){
         this.driver = driver;
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(driver, 10);
     }
 
     public String getPAGE_URL(){
@@ -41,7 +41,7 @@ public class BasePage {
     }
 
     public void setElementText(WebElement element, String text){
-        element.clear();
+        wait.until(ExpectedConditions.elementToBeClickable(element));
         element.sendKeys(text);
         Assert.assertEquals(element.getAttribute("value"), text);
     }
