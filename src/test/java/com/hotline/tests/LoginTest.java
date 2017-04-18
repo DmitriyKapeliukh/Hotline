@@ -2,7 +2,6 @@ package com.hotline.tests;
 
 import com.hotline.HotlineMainPage;
 import com.hotline.data.HotlineData;
-import com.hotline.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -37,7 +36,7 @@ public class LoginTest {
         htMainPage.loadPage();
         htMainPage.clickLoginButton();
         htMainPage.setTextFiledLogin(login);
-        htMainPage.setTextLoginPassword(password);
+        htMainPage.setTextFiledLoginPassword(password);
         htMainPage.clickPopupLoginButton();
     }
 }

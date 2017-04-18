@@ -2,6 +2,8 @@ package com.hotline.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 /**
@@ -11,9 +13,11 @@ public class BasePage {
     public WebDriver driver;
     public String PAGE_URL;
     public String PAGE_TITLE;
+    public WebDriverWait wait;
 
     public BasePage(WebDriver driver){
         this.driver = driver;
+        wait = new WebDriverWait(driver, 5);
     }
 
     public String getPAGE_URL(){
@@ -32,6 +36,7 @@ public class BasePage {
     }
 
     public void clickElement(WebElement element){
+        wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
     }
 

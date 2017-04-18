@@ -4,7 +4,6 @@ import com.hotline.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 
 /**
  * Created by Dmytro_Kapeliukh on 4/13/17.
@@ -44,6 +43,13 @@ public class HotlineMainPage extends BasePage{
         this.PAGE_URL = "http://hotline.ua/";
     }
 
+    public void login(String email, String password){
+        clickElement(loginButton);
+        setTextFiledLogin(email);
+        setTextFiledLoginPassword(password);
+        clickPopupLoginButton();
+    }
+
     public void setTextFieldEmail(String text){
       setElementText(fieldEmail, text);
     }
@@ -72,7 +78,7 @@ public class HotlineMainPage extends BasePage{
         setElementText(fieldLogin, text);
     }
 
-    public void setTextLoginPassword(String text){
+    public void setTextFiledLoginPassword(String text){
         setElementText(filedLoginPassword, text);
     }
 
