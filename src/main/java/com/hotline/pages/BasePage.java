@@ -42,6 +42,7 @@ public class BasePage {
 
     public void setElementText(WebElement element, String text){
         wait.until(ExpectedConditions.elementToBeClickable(element));
+        element.clear();
         element.sendKeys(text);
         Assert.assertEquals(element.getAttribute("value"), text);
     }

@@ -1,6 +1,7 @@
 package com.hotline.tests;
 
 import com.hotline.HotlineMainPage;
+import com.hotline.data.HotlineData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -27,13 +28,14 @@ public class SignUpTest {
         this.driver.quit();
     }
 
-    @Test
-    public void signUpTest(){
+
+    @Test(dataProviderClass = HotlineData.class, dataProvider = "registration")
+    public void signUpTest(String login, String nick, String password){
         htMainPage.loadPage();
         htMainPage.clickRegistrationButton();
-        htMainPage.setTextFieldEmail("mr.auto.qa@gmail.com");
-        htMainPage.setTextFiledNick("AutoQA");
-        htMainPage.setTextFiledPassword("mrautoqa12345");
+        htMainPage.setTextFieldEmail(login);
+        htMainPage.setTextFiledNick(nick);
+        htMainPage.setTextFiledPassword(password);
         htMainPage.clickSubmitButton();
     }
 }
