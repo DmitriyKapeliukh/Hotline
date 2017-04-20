@@ -11,9 +11,6 @@ public class RandomGenerator {private static final String characters = "ABCDEFGH
     private String nick = generateRandom(15);
     private String password = generateRandom(15);
 
-//    public RandomGenerator(){
-//        this.loginPassword = loginPassword;
-//    }
 
     public static String generateRandom(int length) {
         Random random = new SecureRandom();

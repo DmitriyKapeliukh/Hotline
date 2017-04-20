@@ -1,9 +1,9 @@
 package com.hotline.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  * Created by Dmytro_Kapeliukh on 4/17/17.
@@ -29,23 +29,33 @@ public class HotlineMenuPage extends BasePage {
         super(driver);
     }
 
-    public void setTextSearchFiled(String text){
+    public void setTextSearchFiled(String text) {
         setElementText(searchBox, text);
     }
 
-    public void clickSearchButton(){
+    public void clickSearchButton() {
         clickElement(searchButton);
     }
 
-    public void clickSelectIphone(){
+    public void clickSelectIphone() {
         clickElement(selectIphone);
     }
 
-    public void addElementToTheBookmarks(){
+    public void addElementToTheBookmarks() {
         clickElement(addToBookmarks);
     }
 
-    public void clickSaveBookmarkButton(){
+    public void clickSaveBookmarkButton() {
         clickElement(saveBookmark);
+    }
+
+    public boolean isProductExist(){
+        WebElement element = driver.findElement(By.xpath(".//*[@id='card-bookmarks-popup']/form/div[2]"));
+        String errorMessage = element.getText();
+        if (errorMessage.equals("Товар уже добавлен в этот список")){
+            return true;
+        }else {
+            return false;
+        }
     }
 }

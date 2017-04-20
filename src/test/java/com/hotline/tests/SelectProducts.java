@@ -10,8 +10,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
-
 /**
  * Created by Dmytro_Kapeliukh on 4/17/17.
  */
@@ -34,7 +32,7 @@ public class SelectProducts {
         driver.quit();
     }
 
-    @Test(dataProviderClass = HotlineData.class, dataProvider = "login")
+    @Test(groups = "T2", dataProviderClass = HotlineData.class, dataProvider = "login")
     public void selectIphone(String email, String password) throws InterruptedException {
         htMainPage.loadPage();
         htMainPage.login(email, password);
@@ -43,5 +41,11 @@ public class SelectProducts {
         htMenuPage.clickSelectIphone();
         htMenuPage.addElementToTheBookmarks();
         htMenuPage.clickSaveBookmarkButton();
+        if (htMenuPage.isProductExist){
+
+        }
+
+        //System.out.println(FFtest.fluentWaitForElementAndGetTextFromIt(By.xpath(".//*[@id='card-bookmarks-popup']/form/div[2]"), 10));
+
     }
 }

@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Hotline tests">
+    <test name="T1 test">
+        <groups>
+            <run>
+                <include name="T1"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.hotline.tests.LoginTest"/>
+        </classes>
+    </test>
+    <test name="T2 test">
+        <groups>
+            <run>
+                <include name="T2"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.hotline.tests.SelectProducts"/>
+        </classes>
+    </test>
+    <test name="T3 test">
+        <groups>
+            <run>
+                <include name="T3"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.hotline.tests.SignUpTest"/>
+        </classes>
+    </test>
+</suite>

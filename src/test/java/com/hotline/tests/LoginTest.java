@@ -31,7 +31,7 @@ public class LoginTest {
         driver.quit();
     }
 
-    @Test(dataProviderClass = HotlineData.class, dataProvider = "login")
+    @Test(groups = "T1", dataProviderClass = HotlineData.class, dataProvider = "login")
     public void loginTest(String login, String password){
         htMainPage.loadPage();
         htMainPage.clickLoginButton();
