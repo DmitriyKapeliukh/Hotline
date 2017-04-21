@@ -28,7 +28,7 @@ public class SelectProducts {
 
     @AfterClass(alwaysRun = true)
     public void theardown() throws InterruptedException {
-        Thread.sleep(6000L);
+        Thread.sleep(3000L);
         driver.quit();
     }
 
@@ -41,8 +41,9 @@ public class SelectProducts {
         htMenuPage.clickSelectIphone();
         htMenuPage.addElementToTheBookmarks();
         htMenuPage.clickSaveBookmarkButton();
-        if (htMenuPage.isProductExist){
-
+        if (htMenuPage.isProductExist()){
+            htMenuPage.clickCancelButton();
+            System.out.println("Product already exist");
         }
 
         //System.out.println(FFtest.fluentWaitForElementAndGetTextFromIt(By.xpath(".//*[@id='card-bookmarks-popup']/form/div[2]"), 10));

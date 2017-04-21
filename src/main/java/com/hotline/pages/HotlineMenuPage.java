@@ -25,6 +25,9 @@ public class HotlineMenuPage extends BasePage {
     @FindBy(css = ".but-box.but-blue.m_r-15.m_b-10-330.g_statistic")
     WebElement saveBookmark;
 
+    @FindBy(xpath = ".//*[@id='card-bookmarks-popup']/div[4]/button[2]")
+    WebElement cancelButton;
+
     public HotlineMenuPage(WebDriver driver) {
         super(driver);
     }
@@ -47,6 +50,10 @@ public class HotlineMenuPage extends BasePage {
 
     public void clickSaveBookmarkButton() {
         clickElement(saveBookmark);
+    }
+
+    public void clickCancelButton(){
+        clickElement(cancelButton);
     }
 
     public boolean isProductExist(){

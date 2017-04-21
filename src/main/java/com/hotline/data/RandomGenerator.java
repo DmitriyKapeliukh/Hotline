@@ -6,7 +6,8 @@ import java.util.Random;
 /**
  * Created by Dmytro_Kapeliukh on 4/19/17.
  */
-public class RandomGenerator {private static final String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+public class RandomGenerator {
+    private static final String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private String login = generateRandom(15)+"@gmail.com";
     private String nick = generateRandom(15);
     private String password = generateRandom(15);
