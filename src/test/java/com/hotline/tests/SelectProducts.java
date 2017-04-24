@@ -41,6 +41,7 @@ public class SelectProducts {
         htMenuPage.setTextSearchFiled("Iphone");
         htMenuPage.clickSearchButton();
         htMenuPage.clickSelectIphone();
+        htMenuPage.tablePrice();
         htMenuPage.addElementToTheBookmarks();
         htMenuPage.clickSaveBookmarkButton();
         if (htMenuPage.isProductExist()){

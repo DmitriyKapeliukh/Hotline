@@ -5,6 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.Iterator;
+import java.util.List;
+
+import static java.lang.Integer.valueOf;
+
 /**
  * Created by Dmytro_Kapeliukh on 4/17/17.
  */
@@ -55,19 +60,27 @@ public class HotlineMenuPage extends BasePage {
         clickElement(saveBookmark);
     }
 
-    public void clickCancelButton(){
+    public void clickCancelButton() {
         clickElement(cancelButton);
     }
 
-    public boolean isProductExist(){
+    public boolean isProductExist() {
         WebElement element = driver.findElement(By.xpath(".//*[@id='card-bookmarks-popup']/form/div[2]"));
         String errorMessage = element.getText();
-        if (errorMessage.equals("Товар уже добавлен в этот список")){
+        if (errorMessage.equals("Товар уже добавлен в этот список")) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }
 
-    public
+    public int tablePrice() {
+        List<Integer> prices;
+        List<WebElement> list = driver.findElements(By.cssSelector(".range-price.orng[evcon^='Goprice']"));
+        Iterator<WebElement> itr = list.iterator();
+        while (itr.hasNext()) {
+            String priceValue = itr.next().getText().replaceAll("[^\\d]", "");
+            int priceInt = valueOf(priceValue);
+        }
+    }
 }
