@@ -7,7 +7,14 @@
             </run>
         </groups>
         <classes>
-            <class name="com.hotline.tests.LoginTest"/>
+            <class name="com.hotline.tests.LoginTest">
+                <methods>
+                    <parameter name="login" value="dmytro"/>
+                    <parameter name="nick" value="dmytronick"/>
+                    <parameter name="password" value="12345"/>
+                    <include name="signUpTest"/>
+                </methods>
+            </class>
         </classes>
     </test>
     <test name="T2 test">

@@ -8,8 +8,6 @@ import org.openqa.selenium.WebDriver;
  */
 public class HotlineEndRegistrationPage extends BasePage {
 
-    //@FindBy()
-
     public HotlineEndRegistrationPage(WebDriver driver) {
         super(driver);
         this.PAGE_TITLE = "Завершение регистрации";

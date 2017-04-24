@@ -1,7 +1,9 @@
 package com.hotline.pages;
 
+import com.hotline.HotlineMainPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -15,7 +17,9 @@ public class BasePage {
     public String PAGE_TITLE;
     public WebDriverWait wait;
 
+
     public BasePage(WebDriver driver){
+        PageFactory.initElements(driver, this);
         this.driver = driver;
         wait = new WebDriverWait(driver, 10);
     }
@@ -29,8 +33,6 @@ public class BasePage {
     }
 
     public void loadPage(){
-        driver.manage().deleteAllCookies();
-        driver.manage().window().maximize();
         driver.get(getPAGE_URL());
         Assert.assertEquals(driver.getTitle(), getPAGE_TITLE());
     }

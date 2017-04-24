@@ -21,6 +21,8 @@ public class SelectProducts {
     @BeforeClass(alwaysRun = true)
     public void setup(){
         this.driver = new FirefoxDriver();
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
         htMenuPage = PageFactory.initElements(driver, HotlineMenuPage.class);
         htMainPage = PageFactory.initElements(driver, HotlineMainPage.class);
 
@@ -45,8 +47,5 @@ public class SelectProducts {
             htMenuPage.clickCancelButton();
             System.out.println("Product already exist");
         }
-
-        //System.out.println(FFtest.fluentWaitForElementAndGetTextFromIt(By.xpath(".//*[@id='card-bookmarks-popup']/form/div[2]"), 10));
-
     }
 }

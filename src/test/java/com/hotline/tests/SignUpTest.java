@@ -22,6 +22,8 @@ public class SignUpTest {
     @BeforeClass(alwaysRun = true)
     public void setup(){
         this.driver = new FirefoxDriver();
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
         htMainPage = PageFactory.initElements(driver, HotlineMainPage.class);
         htEndRegistrationPage = PageFactory.initElements(driver, HotlineEndRegistrationPage.class);
 
@@ -29,7 +31,7 @@ public class SignUpTest {
 
     @AfterClass(alwaysRun = true)
     public void teardown() throws InterruptedException {
-        Thread.sleep(6000L);
+        Thread.sleep(3000L);
         this.driver.quit();
     }
 
