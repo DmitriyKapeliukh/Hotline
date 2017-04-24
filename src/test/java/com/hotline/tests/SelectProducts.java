@@ -19,7 +19,7 @@ public class SelectProducts {
     HotlineMainPage htMainPage;
 
     @BeforeClass(alwaysRun = true)
-    public void setup(){
+    public void setup() {
         this.driver = new FirefoxDriver();
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
@@ -41,12 +41,21 @@ public class SelectProducts {
         htMenuPage.setTextSearchFiled("Iphone");
         htMenuPage.clickSearchButton();
         htMenuPage.clickSelectIphone();
-        htMenuPage.tablePrice();
         htMenuPage.addElementToTheBookmarks();
         htMenuPage.clickSaveBookmarkButton();
-        if (htMenuPage.isProductExist()){
+        if (htMenuPage.isProductExist()) {
             htMenuPage.clickCancelButton();
             System.out.println("Product already exist");
         }
+    }
+
+    @Test(groups = "T2", dataProviderClass = HotlineData.class, dataProvider = "login")
+    public void selectChipperIphone(String email, String password) throws InterruptedException {
+        htMainPage.loadPage();
+        htMainPage.login(email, password);
+        htMenuPage.setTextSearchFiled("Iphone");
+        htMenuPage.clickSearchButton();
+        htMenuPage.clickSelectIphone();
+        htMenuPage.tablePrice();
     }
 }

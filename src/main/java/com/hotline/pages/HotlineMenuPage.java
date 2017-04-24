@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -75,12 +76,18 @@ public class HotlineMenuPage extends BasePage {
     }
 
     public int tablePrice() {
-        List<Integer> prices;
+        List<Integer> prices = new ArrayList<Integer>();
         List<WebElement> list = driver.findElements(By.cssSelector(".range-price.orng[evcon^='Goprice']"));
         Iterator<WebElement> itr = list.iterator();
         while (itr.hasNext()) {
             String priceValue = itr.next().getText().replaceAll("[^\\d]", "");
-            int priceInt = valueOf(priceValue);
+            prices.add(valueOf(priceValue));
         }
+        int min = prices.get(0);
+        for (int i : prices){
+            min = min < i ? min : i;
+        }
+        System.out.println(min);
+        return min;
     }
 }
