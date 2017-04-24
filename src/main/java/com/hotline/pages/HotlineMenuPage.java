@@ -28,6 +28,9 @@ public class HotlineMenuPage extends BasePage {
     @FindBy(xpath = ".//*[@id='card-bookmarks-popup']/div[4]/button[2]")
     WebElement cancelButton;
 
+    @FindBy(css = ".range-price.orng[evcon^='Goprice']")
+    WebElement priceList;
+
     public HotlineMenuPage(WebDriver driver) {
         super(driver);
     }
@@ -65,4 +68,6 @@ public class HotlineMenuPage extends BasePage {
             return false;
         }
     }
+
+    public
 }
