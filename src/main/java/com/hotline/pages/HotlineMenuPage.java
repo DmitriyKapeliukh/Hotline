@@ -5,13 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static java.lang.Integer.valueOf;
 
 /**
  * Created by Dmytro_Kapeliukh on 4/17/17.
@@ -37,13 +33,7 @@ public class HotlineMenuPage extends BasePage {
     WebElement cancelButton;
 
     @FindBy(css = ".range-price.orng[evcon^='Goprice']")
-    WebElement priceList;
-
-    @FindBy(css = ".m_b-15")
-    List<WebElement> blocks;
-
-    @FindBy(css = ".range-price.orng[evcon^='Goprice']")
-    List<WebElement> priceList2;
+    List<WebElement> priceList;
 
     public HotlineMenuPage(WebDriver driver) {
         super(driver);
@@ -83,48 +73,23 @@ public class HotlineMenuPage extends BasePage {
         }
     }
 
-    public int tablePrice() {
-        List<Integer> prices = new ArrayList<Integer>();
-        List<WebElement> list = driver.findElements(By.cssSelector(".range-price.orng[evcon^='Goprice']"));
-        Iterator<WebElement> itr = list.iterator();
-        while (itr.hasNext()) {
-            String priceValue = itr.next().getText().replaceAll("[^\\d]", "");
-            prices.add(valueOf(priceValue));
-        }
-        int min = prices.get(0);
-        for (int i : prices){
-            min = min < i ? min : i;
-        }
-        System.out.println(min);
-        return min;
+    public void selectIphone(){
+        minProduct(priceList);
     }
 
-    public List<Integer>getPrices(){
-        return blocks.stream()
-                .map(element -> element.findElement(By.xpath("//*[contains(@class, 'range-price orng')]"))
-                        .getText().replaceAll("[^\\d]", ""))
-                .map(Integer::parseInt)
-                .collect(Collectors.toList());
-    }
-
-    public List<String>getPrices2(){
-        List<String> list = new ArrayList<>();
-        priceList2.stream().map(WebElement::getText).forEach(list::add);
-        return list;
-    }
-
-    public static void main(String[] args) {
-        List<WebElement> elements = new ArrayList<>();
+    public void minProduct(List<WebElement> elements) {
 
         boolean isMin = false;
 
         List<Integer> prices = elements.stream()
                 .map(WebElement::getText)
-                .map(CorporateGroupManagementPage::parsePrice)
+                .map(HotlineMenuPage::parsePrice)
                 .collect(Collectors.toList());
 
         Collections.sort(prices);
-        int min = prices.get(isMin ? 0 : prices.size() - 1);
+        int min = Collections.min(prices);
+                //prices.get(isMin ? 0 : prices.size() - 1);
+        System.out.println(min);
 
         elements.stream().filter(element -> parsePrice(element.getText()) == min)
                 .findFirst()

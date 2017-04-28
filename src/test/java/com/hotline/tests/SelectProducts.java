@@ -56,7 +56,6 @@ public class SelectProducts {
         htMenuPage.setTextSearchFiled("Iphone");
         htMenuPage.clickSearchButton();
         htMenuPage.clickSelectIphone();
-        htMenuPage.getPrices2();
-        System.out.println(htMenuPage.getPrices2());
+        htMenuPage.selectIphone();
     }
 }
