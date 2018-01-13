@@ -84,6 +84,7 @@ public class HotlineMenuPage extends BasePage {
         List<Integer> prices = elements.stream()
                 .map(WebElement::getText)
                 .map(HotlineMenuPage::parsePrice)
+                .map(Integer::valueOf)
                 .collect(Collectors.toList());
 
         Collections.sort(prices);

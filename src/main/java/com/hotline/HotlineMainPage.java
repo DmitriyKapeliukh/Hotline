@@ -13,7 +13,7 @@ import org.testng.Assert;
  */
 public class HotlineMainPage extends BasePage{
 
-    @FindBy(css = ".reg")
+    @FindBy(xpath = "//*[@class = 'text']//*[@href = '/register/']")
     WebElement registrationButton;
 
     @FindBy(name = "email")
@@ -28,7 +28,7 @@ public class HotlineMainPage extends BasePage{
     @FindBy(id = "submit-button")
     WebElement submitButton;
 
-    @FindBy(css = ".open-lightbox>b")
+    @FindBy(css = ".item-login .name")
     WebElement loginButton;
 
     @FindBy(name = "login")

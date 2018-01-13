@@ -20,11 +20,6 @@ public class HotlineData {
         randomGenerator = new RandomGenerator();
         return new Object[][]{
                 {randomGenerator.getLogin(), randomGenerator.getNick(), randomGenerator.getPassword()},
-                {"adada", "adads", "adada"},
-                {"adada", "adads", "adada"},
-                {"adada", "adads", "adada"},
-                {"adada", "adads", "adada"},
-                {"adada", "adads", "adada"},
         };
     }
 }

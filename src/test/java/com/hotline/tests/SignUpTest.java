@@ -39,9 +39,10 @@ public class SignUpTest {
     @Test(groups = "T3", dataProviderClass = HotlineData.class, dataProvider = "registration")
     public void signUpTest(String login, String nick, String password){
         htMainPage.loadPage();
+        htMainPage.clickLoginButton();
         htMainPage.clickRegistrationButton();
         htMainPage.setTextFieldEmail(login);
-        htMainPage.setTextFiledNick(nick);
+        htMainPage.setTextFiledLogin(nick);
         htMainPage.setTextFiledPassword(password);
         htMainPage.clickSubmitButton();
         Assert.assertEquals(driver.getTitle(), htEndRegistrationPage.getPAGE_TITLE());
