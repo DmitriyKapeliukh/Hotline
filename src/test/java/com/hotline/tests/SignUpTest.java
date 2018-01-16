@@ -1,6 +1,6 @@
 package com.hotline.tests;
 
-import com.hotline.HotlineMainPage;
+import com.hotline.HotLineMainPage;
 import com.hotline.data.HotlineData;
 import com.hotline.pages.HotlineEndRegistrationPage;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
  */
 public class SignUpTest {
     public WebDriver driver;
-    HotlineMainPage htMainPage;
+    HotLineMainPage htMainPage;
     HotlineEndRegistrationPage htEndRegistrationPage;
 
     @BeforeClass(alwaysRun = true)
@@ -24,7 +24,7 @@ public class SignUpTest {
         this.driver = new FirefoxDriver();
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
-        htMainPage = PageFactory.initElements(driver, HotlineMainPage.class);
+        htMainPage = PageFactory.initElements(driver, HotLineMainPage.class);
         htEndRegistrationPage = PageFactory.initElements(driver, HotlineEndRegistrationPage.class);
 
     }

@@ -1,6 +1,6 @@
 package com.hotline.tests;
 
-import com.hotline.HotlineMainPage;
+import com.hotline.HotLineMainPage;
 import com.hotline.data.HotlineData;
 import com.hotline.pages.HotlineMenuPage;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 public class SelectProducts {
     public WebDriver driver;
     HotlineMenuPage htMenuPage;
-    HotlineMainPage htMainPage;
+    HotLineMainPage htMainPage;
 
     @BeforeClass(alwaysRun = true)
     public void setup() {
@@ -24,7 +24,7 @@ public class SelectProducts {
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         htMenuPage = PageFactory.initElements(driver, HotlineMenuPage.class);
-        htMainPage = PageFactory.initElements(driver, HotlineMainPage.class);
+        htMainPage = PageFactory.initElements(driver, HotLineMainPage.class);
 
     }
 

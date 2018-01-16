@@ -4,14 +4,13 @@ import com.hotline.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 /**
  * Created by Dmytro_Kapeliukh on 4/13/17.
  */
-public class HotlineMainPage extends BasePage{
+public class HotLineMainPage extends BasePage{
 
     @FindBy(xpath = "//*[@class = 'text']//*[@href = '/register/']")
     WebElement registrationButton;
@@ -37,8 +36,8 @@ public class HotlineMainPage extends BasePage{
     @FindBy(name = "password")
     WebElement filedLoginPassword;
 
-    @FindBy(css = ".cell.but-box.but-blue")
-    WebElement PopupLoginButton;
+    @FindBy(css = "[type=submit]")
+    WebElement submitLogin;
 
     @FindBy(css = "#open-user-menu.user.no-adapt-lg>span")
     WebElement userTitle;
@@ -46,7 +45,7 @@ public class HotlineMainPage extends BasePage{
     @FindBy(css = ".close-x")
     WebElement crossTick;
 
-    public HotlineMainPage(WebDriver driver){
+    public HotLineMainPage(WebDriver driver){
         super(driver);
         this.PAGE_TITLE = "Hotline - сравнить цены в интернет-магазинах Украины";
         this.PAGE_URL = "http://hotline.ua/";
@@ -56,7 +55,7 @@ public class HotlineMainPage extends BasePage{
         clickElement(loginButton);
         setTextFiledLogin(email);
         setTextFiledLoginPassword(password);
-        clickPopupLoginButton();
+        clickSubmitLoginButton();
         clickCrossTick();
         Assert.assertEquals(getUserTitle(), "AutoQA");
     }
@@ -93,8 +92,8 @@ public class HotlineMainPage extends BasePage{
         setElementText(filedLoginPassword, text);
     }
 
-    public void clickPopupLoginButton(){
-        clickElement(PopupLoginButton);
+    public void clickSubmitLoginButton(){
+        clickElement(submitLogin);
     }
 
     public void clickCrossTick(){

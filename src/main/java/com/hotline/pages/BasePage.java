@@ -1,6 +1,5 @@
 package com.hotline.pages;
 
-import com.hotline.HotlineMainPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
