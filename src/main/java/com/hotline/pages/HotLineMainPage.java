@@ -1,4 +1,4 @@
-package com.hotline;
+package com.hotline.pages;
 
 import com.hotline.pages.BasePage;
 import org.openqa.selenium.WebDriver;

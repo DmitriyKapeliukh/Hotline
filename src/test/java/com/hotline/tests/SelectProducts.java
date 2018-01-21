@@ -1,6 +1,6 @@
 package com.hotline.tests;
 
-import com.hotline.HotLineMainPage;
+import com.hotline.pages.HotLineMainPage;
 import com.hotline.data.HotlineData;
 import com.hotline.pages.HotlineMenuPage;
 import org.openqa.selenium.WebDriver;
