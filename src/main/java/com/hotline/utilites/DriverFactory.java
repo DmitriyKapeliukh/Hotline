@@ -32,7 +32,7 @@ public class DriverFactory {
                 driver = new FirefoxDriver();
                 break;
             case CHROME:
-                System.setProperty("webdriver.chrome.driver", BrowserConstants.CHROME_PATH);
+                setUpChromeDriverPath();
                 driver = new ChromeDriver();
                 break;
             default:
@@ -40,6 +40,15 @@ public class DriverFactory {
                 break;
         }
         return driver;
+    }
+
+    private static void setUpChromeDriverPath() {
+        if (System.getProperty("os.name").toLowerCase().contains("mac os")) {
+            System.setProperty("webdriver.chrome.driver", BrowserConstants.CHROME_PATH_MAC);
+        }
+        if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+            System.setProperty("webdriver.chrome.driver", BrowserConstants.CHROME_PATH_WIN);
+        }
     }
 
     public static BrowserType getBrowserTypeByProperty(){
