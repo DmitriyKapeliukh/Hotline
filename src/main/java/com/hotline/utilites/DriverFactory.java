@@ -29,6 +29,7 @@ public class DriverFactory {
         WebDriver driver;
         switch (type){
             case FIREFOX:
+                setUpFirefoxDriverPath();
                 driver = new FirefoxDriver();
                 break;
             case CHROME:
@@ -48,6 +49,15 @@ public class DriverFactory {
         }
         if (System.getProperty("os.name").toLowerCase().contains("windows")) {
             System.setProperty("webdriver.chrome.driver", BrowserConstants.CHROME_PATH_WIN);
+        }
+    }
+
+    private static void setUpFirefoxDriverPath() {
+        if (System.getProperty("os.name").toLowerCase().contains("mac os")) {
+            System.setProperty("webdriver.gecko.driver", BrowserConstants.FIREFOX_PATH_MAC);
+        }
+        if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+            System.setProperty("webdriver.gecko.driver", BrowserConstants.CHROME_PATH_WIN);
         }
     }
 

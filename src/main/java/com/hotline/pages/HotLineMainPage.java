@@ -1,6 +1,5 @@
 package com.hotline.pages;
 
-import com.hotline.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,10 +12,10 @@ import org.testng.Assert;
 public class HotLineMainPage extends BasePage{
 
     @FindBy(xpath = "//*[@class = 'text']//*[@href = '/register/']")
-    WebElement registrationButton;
+    private WebElement registrationButton;
 
     @FindBy(name = "email")
-    WebElement fieldEmail;
+    private WebElement fieldEmail;
 
     @FindBy(name = "nick")
     WebElement fieldNick;
