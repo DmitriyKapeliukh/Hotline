@@ -18,28 +18,28 @@ public class HotLineMainPage extends BasePage{
     private WebElement fieldEmail;
 
     @FindBy(name = "nick")
-    WebElement fieldNick;
+    private WebElement fieldNick;
 
     @FindBy(name = "password")
-    WebElement fieldPassword;
+    private WebElement fieldPassword;
 
     @FindBy(id = "submit-button")
-    WebElement submitButton;
+    private WebElement submitButton;
 
     @FindBy(css = ".item-login .name")
-    WebElement loginButton;
+    private WebElement loginButton;
 
     @FindBy(name = "login")
-    WebElement fieldLogin;
+    private WebElement fieldLogin;
 
     @FindBy(name = "password")
-    WebElement filedLoginPassword;
+    private WebElement filedLoginPassword;
 
     @FindBy(css = "[type=submit]")
-    WebElement submitLogin;
+    private WebElement submitLogin;
 
     @FindBy(css = "#open-user-menu.user.no-adapt-lg>span")
-    WebElement userTitle;
+    private WebElement userTitle;
 
     @FindBy(css = ".close-x")
     WebElement crossTick;

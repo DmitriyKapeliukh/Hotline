@@ -2,7 +2,7 @@ package com.hotline.tests;
 
 import com.hotline.data.HotlineData;
 import com.hotline.pages.HotLineMainPage;
-import com.hotline.pages.HotlineEndRegistrationPage;
+import com.hotline.pages.HotLineEndRegistrationPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -22,6 +22,6 @@ public class SignUpTest extends BaseTest{
         htMainPage.setTextFiledLogin(nick);
         htMainPage.setTextFiledPassword(password);
         htMainPage.clickSubmitButton();
-        Assert.assertEquals(driver.getTitle(), new HotlineEndRegistrationPage(driver).getPAGE_TITLE());
+        Assert.assertEquals(driver.getTitle(), new HotLineEndRegistrationPage(driver).getPAGE_TITLE());
     }
 }

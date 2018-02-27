@@ -12,30 +12,30 @@ import java.util.stream.Collectors;
 /**
  * Created by Dmytro_Kapeliukh on 4/17/17.
  */
-public class HotlineMenuPage extends BasePage {
+public class HotLineMenuPage extends BasePage {
 
     @FindBy(css = "#searchbox")
-    WebElement searchBox;
+    private WebElement searchBox;
 
     @FindBy(css = "#doSearch")
-    WebElement searchButton;
+    private WebElement searchButton;
 
     @FindBy(css = ".m_r-10>[title='Цены на Apple iPhone 7 32GB (Black)']")
-    WebElement selectIphone;
+    private WebElement selectIphone;
 
     @FindBy(css = ".rel.a-marker.g_statistic")
-    WebElement addToBookmarks;
+    private WebElement addToBookmarks;
 
     @FindBy(css = ".but-box.but-blue.m_r-15.m_b-10-330.g_statistic")
-    WebElement saveBookmark;
+    private WebElement saveBookmark;
 
     @FindBy(xpath = ".//*[@id='card-bookmarks-popup']/div[4]/button[2]")
-    WebElement cancelButton;
+    private WebElement cancelButton;
 
     @FindBy(css = ".range-price.orng[evcon^='Goprice']")
-    List<WebElement> priceList;
+    private List<WebElement> priceList;
 
-    public HotlineMenuPage(WebDriver driver) {
+    public HotLineMenuPage(WebDriver driver) {
         super(driver);
     }
 
@@ -83,7 +83,7 @@ public class HotlineMenuPage extends BasePage {
 
         List<Integer> prices = elements.stream()
                 .map(WebElement::getText)
-                .map(HotlineMenuPage::parsePrice)
+                .map(HotLineMenuPage::parsePrice)
                 .map(Integer::valueOf)
                 .collect(Collectors.toList());
 

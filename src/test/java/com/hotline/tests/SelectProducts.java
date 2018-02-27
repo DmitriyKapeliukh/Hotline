@@ -2,7 +2,7 @@ package com.hotline.tests;
 
 import com.hotline.pages.HotLineMainPage;
 import com.hotline.data.HotlineData;
-import com.hotline.pages.HotlineMenuPage;
+import com.hotline.pages.HotLineMenuPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -14,16 +14,16 @@ import org.testng.annotations.Test;
  * Created by Dmytro_Kapeliukh on 4/17/17.
  */
 public class SelectProducts {
-    public WebDriver driver;
-    HotlineMenuPage htMenuPage;
-    HotLineMainPage htMainPage;
+    private WebDriver driver;
+    private HotLineMenuPage htMenuPage;
+    private HotLineMainPage htMainPage;
 
     @BeforeClass(alwaysRun = true)
     public void setup() {
         this.driver = new FirefoxDriver();
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
-        htMenuPage = PageFactory.initElements(driver, HotlineMenuPage.class);
+        htMenuPage = PageFactory.initElements(driver, HotLineMenuPage.class);
         htMainPage = PageFactory.initElements(driver, HotLineMainPage.class);
 
     }
