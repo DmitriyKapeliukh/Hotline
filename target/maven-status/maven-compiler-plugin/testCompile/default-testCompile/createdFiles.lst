@@ -1,0 +1,4 @@
+com\hotline\tests\BaseTest.class
+com\hotline\tests\LoginTest.class
+com\hotline\tests\SelectProducts.class
+com\hotline\tests\SignUpTest.class

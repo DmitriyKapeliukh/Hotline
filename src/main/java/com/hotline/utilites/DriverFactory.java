@@ -57,7 +57,7 @@ public class DriverFactory {
             System.setProperty("webdriver.gecko.driver", BrowserConstants.FIREFOX_PATH_MAC);
         }
         if (System.getProperty("os.name").toLowerCase().contains("windows")) {
-            System.setProperty("webdriver.gecko.driver", BrowserConstants.CHROME_PATH_WIN);
+            System.setProperty("webdriver.gecko.driver", BrowserConstants.FIREFOX_PATH_WIN);
         }
     }
 

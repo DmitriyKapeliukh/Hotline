@@ -1,9 +1,8 @@
-/Users/Dmytro_Kapeliukh/My projects/Hotline/src/main/java/com/hotline/pages/HotLineMainPage.java
-/Users/Dmytro_Kapeliukh/My projects/Hotline/src/main/java/com/hotline/pages/FFtest.java
-/Users/Dmytro_Kapeliukh/My projects/Hotline/src/main/java/com/hotline/pages/BasePage.java
-/Users/Dmytro_Kapeliukh/My projects/Hotline/src/main/java/com/hotline/utilites/DriverFactory.java
-/Users/Dmytro_Kapeliukh/My projects/Hotline/src/main/java/com/hotline/BrowserConstants.java
-/Users/Dmytro_Kapeliukh/My projects/Hotline/src/main/java/com/hotline/data/HotlineData.java
-/Users/Dmytro_Kapeliukh/My projects/Hotline/src/main/java/com/hotline/pages/HotlineEndRegistrationPage.java
-/Users/Dmytro_Kapeliukh/My projects/Hotline/src/main/java/com/hotline/data/RandomGenerator.java
-/Users/Dmytro_Kapeliukh/My projects/Hotline/src/main/java/com/hotline/pages/HotlineMenuPage.java
+D:\Hotline\src\main\java\com\hotline\utilites\DriverFactory.java
+D:\Hotline\src\main\java\com\hotline\pages\HotLineMenuPage.java
+D:\Hotline\src\main\java\com\hotline\data\RandomGenerator.java
+D:\Hotline\src\main\java\com\hotline\pages\HotLineEndRegistrationPage.java
+D:\Hotline\src\main\java\com\hotline\BrowserConstants.java
+D:\Hotline\src\main\java\com\hotline\pages\HotLineMainPage.java
+D:\Hotline\src\main\java\com\hotline\pages\BasePage.java
+D:\Hotline\src\main\java\com\hotline\data\HotlineData.java

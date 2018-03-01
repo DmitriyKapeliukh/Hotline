@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="28589" started-at="2018-02-28T15:28:46Z" finished-at="2018-02-28T15:29:14Z">
+    <groups>
+      <group name="T1">
+        <method signature="LoginTest.loginTest(java.lang.String, java.lang.String)[pri:0, instance:com.hotline.tests.LoginTest@6537cf78]" name="loginTest" class="com.hotline.tests.LoginTest"/>
+      </group> <!-- T1 -->
+      <group name="T3">
+        <method signature="SignUpTest.signUpTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.hotline.tests.SignUpTest@67b6d4ae]" name="signUpTest" class="com.hotline.tests.SignUpTest"/>
+      </group> <!-- T3 -->
+    </groups>
+    <test name="Command line test" duration-ms="28589" started-at="2018-02-28T15:28:46Z" finished-at="2018-02-28T15:29:14Z">
+      <class name="com.hotline.tests.SignUpTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.hotline.tests.SignUpTest@67b6d4ae]" name="setup" is-config="true" duration-ms="4582" started-at="2018-02-28T17:29:00Z" finished-at="2018-02-28T17:29:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="signUpTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.hotline.tests.SignUpTest@67b6d4ae]" name="signUpTest" duration-ms="9039" started-at="2018-02-28T17:29:04Z" data-provider="registration" finished-at="2018-02-28T17:29:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ghptxnimiizdjqs@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[rcvwxkctjwkjtpi]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cwvtnrplxwgghlp]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signUpTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.hotline.tests.SignUpTest@67b6d4ae]" name="teardown" is-config="true" duration-ms="791" started-at="2018-02-28T17:29:14Z" finished-at="2018-02-28T17:29:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.hotline.tests.SignUpTest -->
+      <class name="com.hotline.tests.LoginTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.hotline.tests.LoginTest@6537cf78]" name="setup" is-config="true" duration-ms="5179" started-at="2018-02-28T17:28:46Z" finished-at="2018-02-28T17:28:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="loginTest(java.lang.String, java.lang.String)[pri:0, instance:com.hotline.tests.LoginTest@6537cf78]" name="loginTest" duration-ms="8186" started-at="2018-02-28T17:28:51Z" data-provider="login" finished-at="2018-02-28T17:28:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[mr.auto.qa@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mrautoqa12345]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.hotline.tests.LoginTest@6537cf78]" name="teardown" is-config="true" duration-ms="801" started-at="2018-02-28T17:28:59Z" finished-at="2018-02-28T17:29:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.hotline.tests.LoginTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>
