@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="TestSuite" time="17.227" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="TestSuite" time="18.579" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2017.3.4"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -30,7 +30,7 @@
     <property name="os.name" value="Windows 10"/>
     <property name="classworlds.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.3.4\plugins\maven\lib\maven3\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1251"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\oraclexe\app\oracle\product\11.2.0\server\bin;;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_101;C:\Program Files\apache-maven-3.3.9\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Skype\Phone\;C:\Users\Dmytro_Kapeliukh\AppData\Roaming\npm;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\oraclexe\app\oracle\product\11.2.0\server\bin;;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_101;C:\Program Files\apache-maven-3.3.9\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Skype\Phone\;C:\Users\Dmytro_Kapeliukh\AppData\Roaming\npm;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -63,6 +63,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.hotline.tests.LoginTest" name="loginTest" time="8.189"/>
-  <testcase classname="com.hotline.tests.SignUpTest" name="signUpTest" time="9.038"/>
+  <testcase classname="com.hotline.tests.LoginTest" name="loginTest" time="8.631"/>
+  <testcase classname="com.hotline.tests.SignUpTest" name="signUpTest" time="9.948"/>
 </testsuite>

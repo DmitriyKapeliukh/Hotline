@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
 
 /**
  * Created by Dmytro_Kapeliukh on 4/13/17.
@@ -55,8 +54,8 @@ public class HotLineMainPage extends BasePage{
         setTextFiledLogin(email);
         setTextFiledLoginPassword(password);
         clickSubmitLoginButton();
-        clickCrossTick();
-        Assert.assertEquals(getUserTitle(), "AutoQA");
+        //clickCrossTick();
+        //Assert.assertEquals(getUserTitle(), "AutoQA");
     }
 
     public void setTextFieldEmail(String text){

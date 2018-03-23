@@ -1,8 +1,9 @@
 package com.hotline.tests;
 
 import com.hotline.data.HotlineData;
-import com.hotline.pages.HotLineMainPage;
 import com.hotline.pages.HotLineEndRegistrationPage;
+import com.hotline.pages.HotLineMainPage;
+import com.hotline.utilites.RunContext;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,10 +12,12 @@ import org.testng.annotations.Test;
  */
 public class SignUpTest extends BaseTest{
 
+    //WebDriver driver = RunContext.getDriver();
+
 
     @Test(groups = "T3", dataProviderClass = HotlineData.class, dataProvider = "registration")
     public void signUpTest(String login, String nick, String password){
-        HotLineMainPage htMainPage = new HotLineMainPage(driver);
+        HotLineMainPage htMainPage = new HotLineMainPage(RunContext.getDriver());
         htMainPage.loadPage();
         htMainPage.clickLoginButton();
         htMainPage.clickRegistrationButton();
@@ -22,6 +25,6 @@ public class SignUpTest extends BaseTest{
         htMainPage.setTextFiledLogin(nick);
         htMainPage.setTextFiledPassword(password);
         htMainPage.clickSubmitButton();
-        Assert.assertEquals(driver.getTitle(), new HotLineEndRegistrationPage(driver).getPAGE_TITLE());
+        Assert.assertEquals(RunContext.getDriver().getTitle(), new HotLineEndRegistrationPage(RunContext.getDriver()).getPAGE_TITLE());
     }
 }

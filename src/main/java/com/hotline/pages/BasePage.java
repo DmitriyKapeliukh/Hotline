@@ -10,20 +10,20 @@ import org.testng.Assert;
 /**
  * Created by Dmytro_Kapeliukh on 4/14/2017.
  */
-public class BasePage {
-    public WebDriver driver;
-    public String PAGE_URL;
-    public String PAGE_TITLE;
-    public WebDriverWait wait;
+public abstract class BasePage {
+    WebDriver driver;
+    String PAGE_URL;
+    String PAGE_TITLE;
+    WebDriverWait wait;
 
 
-    public BasePage(WebDriver driver){
+    BasePage(WebDriver driver){
         PageFactory.initElements(driver, this);
         this.driver = driver;
         wait = new WebDriverWait(driver, 10);
     }
 
-    public String getPAGE_URL(){
+    private String getPAGE_URL(){
         return PAGE_URL;
     }
 
@@ -36,12 +36,12 @@ public class BasePage {
         Assert.assertEquals(driver.getTitle(), getPAGE_TITLE());
     }
 
-    public void clickElement(WebElement element){
+    void clickElement(WebElement element){
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
     }
 
-    public void setElementText(WebElement element, String text){
+    void setElementText(WebElement element, String text){
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.clear();
         element.sendKeys(text);

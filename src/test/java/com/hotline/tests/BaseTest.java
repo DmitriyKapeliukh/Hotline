@@ -1,9 +1,10 @@
 package com.hotline.tests;
 
 import com.hotline.utilites.DriverFactory;
+import com.hotline.utilites.RunContext;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,18 +15,23 @@ import static com.hotline.utilites.DriverFactory.getWebDriver;
  */
 public class BaseTest {
 
-    public WebDriver driver;
+    //private WebDriver driver;
 
-    @BeforeClass(alwaysRun = true)
+    //private RunContext context = new RunContext();
+
+    @BeforeMethod(alwaysRun = true)
     public void setup(){
-        this.driver = getWebDriver(DriverFactory.getBrowserTypeByProperty());
+        WebDriver driver;
+        driver = getWebDriver(DriverFactory.getBrowserTypeByProperty());
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        RunContext.setDriver(driver);
     }
 
-    @AfterClass(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void teardown() throws InterruptedException {
+        WebDriver driver = RunContext.getDriver();
         driver.quit();
     }
 }
